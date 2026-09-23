@@ -24,7 +24,7 @@ import jakarta.ws.rs.QueryParam;
 
 import java.util.List;
 
-@McpDomain(value = "fsi/market-data", basePath = "/api/fsi/market-data")
+@McpDomain(value = "fsi/market-data", app = "fsitrading", basePath = "/api/fsi/market-data")
 @ApplicationScoped
 public class FsiMarketDataApi {
 

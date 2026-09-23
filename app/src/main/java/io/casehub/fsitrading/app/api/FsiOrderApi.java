@@ -12,7 +12,7 @@ import jakarta.inject.Inject;
 import java.util.List;
 import java.util.UUID;
 
-@McpDomain(value = "fsi/orders", basePath = "/api/fsi/orders")
+@McpDomain(value = "fsi/orders", app = "fsitrading", basePath = "/api/fsi/orders")
 @ApplicationScoped
 public class FsiOrderApi {
 

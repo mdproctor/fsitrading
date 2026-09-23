@@ -9,7 +9,7 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import java.util.Map;
 
-@McpDomain(value = "fsi/preferences", basePath = "/api/fsi/preferences")
+@McpDomain(value = "fsi/preferences", app = "fsitrading", basePath = "/api/fsi/preferences")
 @ApplicationScoped
 public class FsiPreferencesApi {
 

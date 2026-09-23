@@ -10,7 +10,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.NotFoundException;
 
-@McpDomain(value = "fsi/layout", basePath = "/api/fsi/layout")
+@McpDomain(value = "fsi/layout", app = "fsitrading", basePath = "/api/fsi/layout")
 @ApplicationScoped
 public class FsiLayoutApi {
 

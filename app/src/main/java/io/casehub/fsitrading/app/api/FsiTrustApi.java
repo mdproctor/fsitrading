@@ -19,7 +19,7 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 import java.util.Arrays;
 import java.util.List;
 
-@McpDomain(value = "fsi/trust", basePath = "/api/fsi/trust")
+@McpDomain(value = "fsi/trust", app = "fsitrading", basePath = "/api/fsi/trust")
 @ApplicationScoped
 public class FsiTrustApi {
 

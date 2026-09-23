@@ -10,7 +10,7 @@ import io.casehub.platform.api.mcp.RestPath;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
-@McpDomain(value = "fsi/gdpr", basePath = "/api/fsi/gdpr")
+@McpDomain(value = "fsi/gdpr", app = "fsitrading", basePath = "/api/fsi/gdpr")
 @ApplicationScoped
 public class FsiGdprApi {
 
