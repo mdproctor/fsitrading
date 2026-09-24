@@ -31,7 +31,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-@McpDomain(value = "fsi/incidents", app = "fsitrading", basePath = "/api/fsi/incidents")
+@McpDomain(value = "fsi/incidents", app = "fsitrading", basePath = "/api/fsi/incidents", summary = "Incidents — get, list, report operations")
 @ApplicationScoped
 public class FsiIncidentApi {
 

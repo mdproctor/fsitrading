@@ -22,7 +22,7 @@ import java.math.RoundingMode;
 import java.util.List;
 import java.util.UUID;
 
-@McpDomain(value = "fsi/kpis", app = "fsitrading", basePath = "/api/fsi/kpis")
+@McpDomain(value = "fsi/kpis", app = "fsitrading", basePath = "/api/fsi/kpis", summary = "Kpis — find, get operations")
 @ApplicationScoped
 public class FsiKpiApi {
 

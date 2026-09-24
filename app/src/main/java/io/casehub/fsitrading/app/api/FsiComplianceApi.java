@@ -24,7 +24,7 @@ import jakarta.ws.rs.QueryParam;
 import java.util.List;
 import java.util.UUID;
 
-@McpDomain(value = "fsi/compliance", app = "fsitrading", basePath = "/api/fsi/compliance")
+@McpDomain(value = "fsi/compliance", app = "fsitrading", basePath = "/api/fsi/compliance", summary = "Compliance — get, list, request operations")
 @ApplicationScoped
 public class FsiComplianceApi {
 

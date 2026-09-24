@@ -10,7 +10,7 @@ import io.casehub.platform.api.mcp.RestPath;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
-@McpDomain(value = "fsi/gdpr", app = "fsitrading", basePath = "/api/fsi/gdpr")
+@McpDomain(value = "fsi/gdpr", app = "fsitrading", basePath = "/api/fsi/gdpr", summary = "Erase personal data for a subject (GDPR Art.17)")
 @ApplicationScoped
 public class FsiGdprApi {
 

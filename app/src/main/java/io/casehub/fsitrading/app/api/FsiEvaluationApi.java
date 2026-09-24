@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-@McpDomain(value = "fsi/evaluations", app = "fsitrading", basePath = "/api/fsi/evaluations")
+@McpDomain(value = "fsi/evaluations", app = "fsitrading", basePath = "/api/fsi/evaluations", summary = "Trigger an arena evaluation run")
 @ApplicationScoped
 public class FsiEvaluationApi {
 

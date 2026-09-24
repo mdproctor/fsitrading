@@ -16,7 +16,7 @@ import jakarta.ws.rs.core.Response;
 import java.util.List;
 import java.util.UUID;
 
-@McpDomain(value = "fsi/deliberations", app = "fsitrading", basePath = "/api/fsi/deliberations")
+@McpDomain(value = "fsi/deliberations", app = "fsitrading", basePath = "/api/fsi/deliberations", summary = "List deliberation records; Get deliberation by ID; Trigger a manual deliberation")
 @ApplicationScoped
 public class FsiDeliberationApi {
 

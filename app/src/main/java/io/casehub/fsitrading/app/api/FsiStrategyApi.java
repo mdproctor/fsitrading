@@ -12,7 +12,7 @@ import jakarta.inject.Inject;
 
 import java.util.List;
 
-@McpDomain(value = "fsi/strategies", app = "fsitrading", basePath = "/api/fsi/strategies")
+@McpDomain(value = "fsi/strategies", app = "fsitrading", basePath = "/api/fsi/strategies", summary = "List all strategies; List active strategies; Deploy a strategy")
 @ApplicationScoped
 public class FsiStrategyApi {
 

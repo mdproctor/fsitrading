@@ -11,7 +11,7 @@ import jakarta.ws.rs.QueryParam;
 
 import java.util.List;
 
-@McpDomain(value = "fsi/routing-decisions", app = "fsitrading", basePath = "/api/fsi/routing-decisions")
+@McpDomain(value = "fsi/routing-decisions", app = "fsitrading", basePath = "/api/fsi/routing-decisions", summary = "List routing decisions; Get latest completed routing decision")
 @ApplicationScoped
 public class FsiRoutingDecisionApi {
 
