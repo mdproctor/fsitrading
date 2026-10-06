@@ -61,7 +61,8 @@ public class FsiCaseOutcomeObserver implements CaseOutcomeObserver {
                                          new MemoryDomain("fsitrading"), event.tenancyId(),
                                          caseId, Path.root());
 
-        cbrStore.recordOutcome(storedId, event.tenancyId(),
-                               CbrOutcome.of(1.0, event.outcomeLabel(), Instant.now()));
+        cbrStore.recordOutcome(storedId,
+                               CbrOutcome.of(1.0, event.outcomeLabel(), Instant.now()),
+                               event.tenancyId());
     }
 }

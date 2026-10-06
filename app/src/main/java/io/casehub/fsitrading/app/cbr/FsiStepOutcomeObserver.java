@@ -56,7 +56,8 @@ public class FsiStepOutcomeObserver implements StepOutcomeObserver {
                                          new MemoryDomain("fsitrading"), event.tenancyId(),
                                          event.caseId().toString(), Path.root());
 
-        cbrStore.recordOutcome(storedId, event.tenancyId(),
-                               CbrOutcome.of(confidence, event.outcome().name(), Instant.now()));
+        cbrStore.recordOutcome(storedId,
+                               CbrOutcome.of(confidence, event.outcome().name(), Instant.now()),
+                               event.tenancyId());
     }
 }

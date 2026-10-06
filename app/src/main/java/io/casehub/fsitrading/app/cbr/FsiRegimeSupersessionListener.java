@@ -40,10 +40,10 @@ public class FsiRegimeSupersessionListener {
         if (previous != null && previous != assessment.regime()) {
             String tenantId = event.tenancyId() != null ? event.tenancyId() : "default";
             int count = cbrStore.supersedeMatching(
-                    tenantId, FSI_DOMAIN, CbrPlanRecord.CBR_TYPE,
+                    FSI_DOMAIN, CbrPlanRecord.CBR_TYPE,
                     Map.of("market_regime", CbrFilter.contains(previous.name())),
                     "Regime changed from " + previous + " to " + assessment.regime()
-                            + " on " + assessment.instrument());
+                            + " on " + assessment.instrument(), tenantId);
             LOG.infof("Regime %s → %s on %s: superseded %d CBR cases",
                     previous, assessment.regime(), assessment.instrument(), count);
         }
