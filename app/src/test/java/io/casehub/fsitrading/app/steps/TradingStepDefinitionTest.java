@@ -1,10 +1,9 @@
 package io.casehub.fsitrading.app.steps;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import io.casehub.yaml.core.step.InvokeBinding;
 import io.casehub.yaml.core.step.StepDefinitionFile;
 import io.casehub.yaml.core.step.StepDefinitionParser;
+import io.casehub.yaml.jackson.YamlMappers;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +19,7 @@ class TradingStepDefinitionTest {
 
     @BeforeAll
     static void loadStepDefinitions() throws IOException {
-        var mapper = new ObjectMapper(new YAMLFactory());
+        var mapper = YamlMappers.create();
         try (var stream = TradingStepDefinitionTest.class.getClassLoader()
                 .getResourceAsStream("steps/trading-steps.yaml")) {
             assertThat(stream).as("steps/trading-steps.yaml must exist on classpath").isNotNull();

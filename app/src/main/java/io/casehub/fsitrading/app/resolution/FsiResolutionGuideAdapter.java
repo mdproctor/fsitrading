@@ -1,10 +1,10 @@
 package io.casehub.fsitrading.app.resolution;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import io.casehub.api.spi.CorpusSourceAdapter;
 import io.casehub.api.spi.GuidanceStepInput;
 import io.casehub.api.spi.ResolutionGuideInput;
+import io.casehub.yaml.jackson.YamlMappers;
 import jakarta.enterprise.context.ApplicationScoped;
 
 import java.io.IOException;
@@ -23,7 +23,7 @@ public class FsiResolutionGuideAdapter implements CorpusSourceAdapter {
             "resolution/margin-call.yaml"
     };
 
-    private static final ObjectMapper YAML = new ObjectMapper(new YAMLFactory());
+    private static final ObjectMapper YAML = YamlMappers.create();
 
     @Override
     public String id() {

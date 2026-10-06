@@ -267,6 +267,13 @@
       <version>2.8.3</version>
     </dependency>
 
+    <!-- YAML 1.2 factory — centralised ObjectMapper with boolean-word-as-string -->
+    <dependency>
+      <groupId>io.casehub</groupId>
+      <artifactId>casehub-platform-yaml-jackson</artifactId>
+      <version>${casehub.version}</version>
+    </dependency>
+
     <!-- ================================================================ -->
     <!-- Test                                                              -->
     <!-- ================================================================ -->

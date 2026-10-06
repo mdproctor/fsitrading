@@ -1,9 +1,9 @@
 package io.casehub.fsitrading.app.playbooks;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import io.casehub.yaml.core.step.StepDefinitionFile;
 import io.casehub.yaml.core.step.StepDefinitionParser;
+import io.casehub.yaml.jackson.YamlMappers;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class StrategyEvaluationPlaybookTest {
 
     private static final String PLAYBOOK_PATH = "playbooks/strategy-evaluation-cycle.yaml";
-    private static final ObjectMapper YAML = new ObjectMapper(new YAMLFactory());
+    private static final ObjectMapper YAML = YamlMappers.create();
     private static Set<String> catalogActions;
     private static Map<String, Object> playbook;
 

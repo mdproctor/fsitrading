@@ -1,16 +1,15 @@
 package io.casehub.fsitrading.app.playbooks;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import io.casehub.yaml.core.step.StepDefinitionFile;
 import io.casehub.yaml.core.step.StepDefinitionParser;
+import io.casehub.yaml.jackson.YamlMappers;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -21,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class SharedModuleTest {
 
-    private static final ObjectMapper YAML = new ObjectMapper(new YAMLFactory());
+    private static final ObjectMapper YAML = YamlMappers.create();
     private static final Pattern STEP_REF = Pattern.compile("fsitrading\\.[a-z-]+");
     private static Set<String> catalogActions;
 
