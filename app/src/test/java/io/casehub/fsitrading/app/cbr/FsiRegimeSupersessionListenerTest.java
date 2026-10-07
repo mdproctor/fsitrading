@@ -39,15 +39,15 @@ class FsiRegimeSupersessionListenerTest {
 
     @Test
     void supersedesOnRegimeChange() {
-        when(cbrStore.supersedeMatching(anyString(), any(), anyString(), any(), anyString()))
+        when(cbrStore.supersedeMatching(any(), any(), any(), anyString(), anyString()))
                 .thenReturn(3);
 
         publish("AAPL", MarketRegime.TRENDING);
         publish("AAPL", MarketRegime.VOLATILE);
 
         var filtersCaptor = ArgumentCaptor.forClass(Map.class);
-        verify(cbrStore).supersedeMatching(eq("default"), any(), anyString(),
-                filtersCaptor.capture(), anyString());
+        verify(cbrStore).supersedeMatching(any(), any(),
+                filtersCaptor.capture(), anyString(), eq("default"));
 
         @SuppressWarnings("unchecked")
         Map<String, CbrFilter> filters = filtersCaptor.getValue();
@@ -58,7 +58,7 @@ class FsiRegimeSupersessionListenerTest {
     void doesNotSupersedeOnFirstAssessment() {
         publish("AAPL", MarketRegime.TRENDING);
 
-        verify(cbrStore, never()).supersedeMatching(anyString(), any(), anyString(), any(), anyString());
+        verify(cbrStore, never()).supersedeMatching(any(), any(), any(), anyString(), anyString());
     }
 
     @Test
@@ -66,19 +66,19 @@ class FsiRegimeSupersessionListenerTest {
         publish("AAPL", MarketRegime.TRENDING);
         publish("AAPL", MarketRegime.TRENDING);
 
-        verify(cbrStore, never()).supersedeMatching(anyString(), any(), anyString(), any(), anyString());
+        verify(cbrStore, never()).supersedeMatching(any(), any(), any(), anyString(), anyString());
     }
 
     @Test
     void tracksPerInstrumentIndependently() {
-        when(cbrStore.supersedeMatching(anyString(), any(), anyString(), any(), anyString()))
+        when(cbrStore.supersedeMatching(any(), any(), any(), anyString(), anyString()))
                 .thenReturn(1);
 
         publish("AAPL", MarketRegime.TRENDING);
         publish("MSFT", MarketRegime.VOLATILE);
         publish("AAPL", MarketRegime.VOLATILE);
 
-        verify(cbrStore).supersedeMatching(anyString(), any(), anyString(), any(), anyString());
+        verify(cbrStore).supersedeMatching(any(), any(), any(), anyString(), anyString());
     }
 
     private void publish(String instrument, MarketRegime regime) {

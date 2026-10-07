@@ -41,7 +41,7 @@ class FsiChannelAgentDispatcherTest {
                         "instrument", instrument, "role", "ORCHESTRATOR"),
                 "Please analyse " + instrument);
         var message = new OutboundMessage(UUID.randomUUID(), 1L, "orchestrator",
-                MessageType.COMMAND, content, null, null, null, List.of(), null, "debate");
+                MessageType.COMMAND, content, null, null, null, null, List.of(), "debate", null);
         return new ChannelAgentRequest(CHANNEL_ID, UUID.randomUUID().toString(), message, "debate");
     }
 }

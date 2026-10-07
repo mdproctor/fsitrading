@@ -134,7 +134,7 @@ class FsiDebateHandlerTest {
 
     private ChannelAgentRequest makeRequest(String content) {
         var message = new OutboundMessage(UUID.randomUUID(), 1L, "other-agent",
-                MessageType.COMMAND, content, null, null, null, List.of(), null, "debate");
+                MessageType.COMMAND, content, null, null, null, null, List.of(), "debate", null);
         return new ChannelAgentRequest(CHANNEL_ID, UUID.randomUUID().toString(), message, "debate");
     }
 }

@@ -105,7 +105,7 @@ class FsiCaseOutcomeObserverTest {
 
         observer.onOutcome(event);
 
-        verify(cbrStore).recordOutcome(anyString(), eq("tenant-1"), any());
+        verify(cbrStore).recordOutcome(anyString(), any(), eq("tenant-1"));
     }
 
     @Test

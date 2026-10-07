@@ -131,7 +131,7 @@ class SubTaskHandlerTest {
                         "instrument", "AAPL", "role", "ORCHESTRATOR"),
                 "Analyse AAPL");
         var message = new OutboundMessage(UUID.randomUUID(), 1L, "orchestrator",
-                MessageType.COMMAND, content, null, null, null, List.of(), null, "debate");
+                MessageType.COMMAND, content, null, null, null, null, List.of(), "debate", null);
         return new ChannelAgentRequest(CHANNEL_ID, UUID.randomUUID().toString(), message, "debate");
     }
 
@@ -142,7 +142,7 @@ class SubTaskHandlerTest {
                         "instrument1", instrument1, "instrument2", instrument2, "role", "ORCHESTRATOR"),
                 "Check correlation");
         var message = new OutboundMessage(UUID.randomUUID(), 1L, "orchestrator",
-                MessageType.COMMAND, content, null, null, null, List.of(), null, "debate");
+                MessageType.COMMAND, content, null, null, null, null, List.of(), "debate", null);
         return new ChannelAgentRequest(CHANNEL_ID, UUID.randomUUID().toString(), message, "debate");
     }
 }

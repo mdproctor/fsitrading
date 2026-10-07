@@ -103,7 +103,7 @@ class FsiStepOutcomeObserverTest {
 
         observer.onStepOutcome(event(RoutingOutcome.SUCCESS));
 
-        verify(cbrStore).recordOutcome(eq("step-cbr-1"), eq("tenant-1"), any());
+        verify(cbrStore).recordOutcome(eq("step-cbr-1"), any(), eq("tenant-1"));
     }
 
     private StepOutcomeEvent event(RoutingOutcome outcome) {
