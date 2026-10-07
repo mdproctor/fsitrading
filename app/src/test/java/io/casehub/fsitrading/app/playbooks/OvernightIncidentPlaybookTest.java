@@ -1,8 +1,8 @@
 package io.casehub.fsitrading.app.playbooks;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.casehub.yaml.core.step.StepDefinitionFile;
-import io.casehub.yaml.core.step.StepDefinitionParser;
+import io.casehub.yaml.core.step.DeclarationFile;
+import io.casehub.yaml.core.step.DeclarationParser;
 import io.casehub.yaml.jackson.YamlMappers;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -29,7 +29,7 @@ class OvernightIncidentPlaybookTest {
         try (var stream = OvernightIncidentPlaybookTest.class.getClassLoader()
                 .getResourceAsStream("steps/trading-steps.yaml")) {
             Map<String, Object> yaml = YAML.readValue(stream, Map.class);
-            StepDefinitionFile stepFile = StepDefinitionParser.parse(yaml);
+            DeclarationFile stepFile = DeclarationParser.parse(yaml);
             catalogActions = stepFile.actions().keySet().stream()
                     .map(a -> "fsitrading." + a).collect(Collectors.toSet());
         }

@@ -1,8 +1,8 @@
 package io.casehub.fsitrading.app.steps;
 
 import io.casehub.yaml.core.step.InvokeBinding;
-import io.casehub.yaml.core.step.StepDefinitionFile;
-import io.casehub.yaml.core.step.StepDefinitionParser;
+import io.casehub.yaml.core.step.DeclarationFile;
+import io.casehub.yaml.core.step.DeclarationParser;
 import io.casehub.yaml.jackson.YamlMappers;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class TradingStepDefinitionTest {
 
-    private static StepDefinitionFile stepFile;
+    private static DeclarationFile stepFile;
 
     @BeforeAll
     static void loadStepDefinitions() throws IOException {
@@ -24,7 +24,7 @@ class TradingStepDefinitionTest {
                 .getResourceAsStream("steps/trading-steps.yaml")) {
             assertThat(stream).as("steps/trading-steps.yaml must exist on classpath").isNotNull();
             Map<String, Object> yaml = mapper.readValue(stream, Map.class);
-            stepFile = StepDefinitionParser.parse(yaml);
+            stepFile = DeclarationParser.parse(yaml);
         }
     }
 
